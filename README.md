@@ -15,7 +15,7 @@ Trains:[// this is the table of list of trains
     }
 ]
 
-TrainsRoute:[
+TrainsRoute:[// this is the table which has the itinerary deatils and price
     {
         TrainsRouteId:'',// composite key of TrainsRouteID and price
         trainId:'', // foreign key from Train table
