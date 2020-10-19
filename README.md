@@ -62,6 +62,8 @@ UsersRequests:[
     }
 ]
 ```
+* form of each message is below
+```json
 Brain to Alert:
 {
   name: SEND_ALERT
@@ -108,7 +110,7 @@ failure
 name:GET_PRICES_FAIL,
 reason: 'API Limit exceeded' or 'no details available'
 }
-
+```
 * Brain ask Prices_node when to check the price
 * Brain ask Alert_node to inform customers
 
