@@ -1,6 +1,6 @@
 # PriceAlert
 
-### Still need to modify with AWS RDS, lambda, sqs, ses. here is old design:
+### Still need to modify with AWS RDS, lambda, sqs, ses. here is the old design:
 ![PriceAlert](/img.png)
 
 ## Brain
@@ -8,7 +8,7 @@
    *  database having below information:
 ```json
 // below are the tables in Database.
-Trains:[
+Trains:[// this is the table of list of trains
     {
         trainDescription:'',
         trainId:'' // primary key 
