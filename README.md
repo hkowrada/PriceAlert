@@ -14,7 +14,15 @@ Trains:[// this is the table of list of trains
         trainId:'' // primary key 
     }
 ]
+```
+* here is SQL code for above mentioned Trains table
+```sql
+CREATE TABLE Trains
+(trainDescription varchar(200) NOT NULL,
+trainId int IDENTITY(1,1) PRIMARY KEY)
+```
 
+```js
 TrainsRoute:[// this is the table which has the itinerary deatils and price
     {
         TrainsRouteId:'',// composite key of TrainsRouteID and price
@@ -25,7 +33,21 @@ TrainsRoute:[// this is the table which has the itinerary deatils and price
         price:''// composite key of TrainsRouteID and price
     }
 ]
+```
+* here is SQL code for above mentioned TrainsRoute table
+```sql
+CREATE TABLE TrainsRoute
+(TrainsRouteId int IDENTITY(1,1),
+ trainId int FOREIGN KEY REFERENCES Trains(trainId), 
+ origin varchar(200) NOT NULL,
+ destination varchar(200) NOT NULL,
+ timeStampPrice date default CURRENT_TIMESTAMP,
+ price float(10,2) NOT NULL,
+ CONSTRAINT TrainsRouteIdPrice PRIMARY KEY (TrainsRouteId, price)
+ )
 
+```
+```js
 Users:[
     {
         userid:'', //primary key
@@ -40,7 +62,19 @@ Users:[
         emailId:''
     }
 ]
+```
+* here is SQL code for above mentioned Users table
 
+```sql
+CREATE TABLE Users
+ (userid int IDENTITY(1,1) PRIMARY KEY,
+ userName varchar(200) NOT NULL,
+ MobileNumber varchar(15), 
+ emailId varchar(200) NOT NULL
+ )
+```
+
+```js
 UsersRequests:[
     {
         RequestId:'',// primary key
@@ -62,6 +96,22 @@ UsersRequests:[
     }
 ]
 ```
+* here is SQL code for above mentioned UsersRequests table
+```sql
+
+ CREATE TABLE UsersRequests 
+ (RequestId int IDENTITY(1,1) PRIMARY KEY,
+  UserId int FOREIGN KEY REFERENCES Users(UserId),
+  UsersMaxPrice numeric(5,2),
+  TrainsRouteId int ,
+  TrainsRouteIdPrice NUMERIC(10,2),
+  RequestDateTime date default CURRENT_TIMESTAMP, 
+  GetPercentage NUMERIC(3,2) ,
+  constraint FKTrainsrouteRequest Foreign KEY(TrainsRouteId,TrainsRouteIdPrice) references TrainsRoute(TrainsRouteId,Price)
+  )
+
+```
+
 * form of each message is below
 ```js
 Brain to Alert:
