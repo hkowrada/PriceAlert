@@ -1,7 +1,13 @@
 # PriceAlert
 
-### Still need to modify with AWS RDS, lambda, sqs, ses. here is the old design:
-![PriceAlert](/img.png)
+### For Dev
+![PriceAlert](/Dev.jpg)
+
+### For Dev_Scalable
+![PriceAlert](/DevScalable.jpg)
+
+### For Serverless
+![PriceAlert](/Serverless.jpg)
 
 ## Brain
 * Brain connects to database 
