@@ -6,10 +6,9 @@
 ## Brain
 * Brain connects to database 
    *  database having below information:
-```json
+```js
 // below are the tables in Database.
 Trains:[// this is the table of list of trains
-    "key":
     {
         trainDescription:'',
         trainId:'' // primary key 
@@ -64,7 +63,7 @@ UsersRequests:[
 ]
 ```
 * form of each message is below
-```json
+```js
 Brain to Alert:
 {
   name: SEND_ALERT
