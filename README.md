@@ -12,16 +12,15 @@
 ## Brain
 * Brain connects to database 
    *  database having below information:
-```json
+```js
 // below are the tables in Database.
-{
+
 Trains:[// this is the table of list of trains
     {
         trainDescription:'',
         trainId:'' // primary key 
     }
 ]
-}
 ```
 * here is SQL code for above mentioned Trains table
 ```sql
